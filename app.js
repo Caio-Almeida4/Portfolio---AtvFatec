@@ -2,7 +2,6 @@ var express = require('express');
 var path = require('path');
 var indexRouter = require('./routes/index');
 var contatoRouter = require('./routes/contato');
-var dashboardRouter = require('./routes/dashboard');
 var disciplinasRouter = require('./routes/disciplinas');
 var projetosRouter = require('./routes/projetos');
 var sobreRouter = require('./routes/sobre');
@@ -20,7 +19,6 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use('/', indexRouter)
 app.use('/sobre', sobreRouter)
 app.use('/contato', contatoRouter)
-app.use('/dashboard', dashboardRouter)
 app.use('/disciplinas', disciplinasRouter)
 app.use('/projetos', projetosRouter)
 

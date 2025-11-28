@@ -1,8 +1,140 @@
+/* Reset and base */
+* { box-sizing: border-box; }
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+  color: #1b1b1b;
+  background: linear-gradient(135deg, #e9eef5 0%, #f7fbff 100%);
 }
 
-a {
-  color: #00B7FF;
+/* Hero area: starts 50px below top and centers content vertically */
+.hero {
+  min-height: calc(50px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+  width: 100%;
+}
+
+/* Title */
+.BoasVindas {
+  background: #ffffff;
+  padding: 18px 28px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(16, 24, 40, 0.08);
+  font-size: 48px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Other content blocks have a different background from body */
+.apresentacao {
+  text-align: center;
+  background: rgba(255,255,255,0.92);
+  margin: 20px auto;
+  padding: 14px 18px;
+  width: 92%;
+  max-width: 960px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+}
+
+/* Narrower nav container */
+.main-nav {
+  text-align: center;
+  background: rgba(255,255,255,0.92);
+  margin: 20px auto;
+  padding: 12px 16px;
+  width: 320px;
+  max-width: 92%;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+}
+
+.main-nav h2 { margin: 0 0 8px 0; }
+.main-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: block;
+  max-width: 320px;
+}
+.main-nav li {
+  margin: 8px 0;
+  text-align: center;
+}
+.main-nav a { text-decoration: none; color: #1a73e8; font-weight:600; padding:8px 12px; border-radius:6px; display:inline-block; }
+.main-nav a:hover { background: rgba(26,115,232,0.08); }
+
+/* Sobre page styles */
+
+.informacoes {
+  display: block;
+  max-width: 960px;
+  margin: 28px auto;
+  padding: 36px 18px 28px 18px; /* reserve space at top for the avatar above content */
+  background: rgba(255,255,255,0.95);
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(16,24,40,0.06);
+  position: relative;
+  text-align: center;
+}
+
+.foto-perfil {
+  display: block;
+  margin: 0 auto 18px auto;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(16,24,40,0.14);
+  border: 3px solid rgba(255,255,255,0.95);
+  background: #fff;
+}
+
+.desc { max-width: 760px; margin: 0 auto; }
+.desc p { margin: 0 0 12px 0; line-height: 1.6; text-align: center; }
+
+@media (min-width: 720px) {
+  .informacoes { padding-top: 48px; }
+  .desc { text-align: left; }
+}
+
+/* Top site navbar (fixed) */
+.site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.98);
+  box-shadow: 0 4px 18px rgba(16,24,40,0.06);
+  z-index: 999;
+  backdrop-filter: blur(4px);
+}
+.site-nav .nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 18px;
+}
+.nav-brand {
+  font-weight: 700;
+  color: #111827;
+  text-decoration: none;
+  font-size: 18px;
+}
+.site-nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 14px; }
+.site-nav a { color: #1a73e8; text-decoration: none; padding: 6px 10px; border-radius: 6px; }
+.site-nav a:hover { background: rgba(26,115,232,0.08); }
+
+/* Add top spacing only when pages include the nav */
+body.with-nav { padding-top: 64px; }
+
+@media (max-width: 540px) {
+  .site-nav .nav-inner { padding: 8px 12px; }
+  body.with-nav { padding-top: 56px; }
+  .site-nav ul { gap: 8px; }
 }
