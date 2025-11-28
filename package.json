@@ -6,9 +6,12 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "body-parser": "^2.2.1",
     "debug": "~2.6.9",
     "ejs": "^3.1.10",
     "express": "~4.16.1",
-    "nodemon": "^3.1.11"
+    "mysql2": "^3.15.3",
+    "nodemon": "^3.1.11",
+    "sequelize": "^6.37.7"
   }
 }

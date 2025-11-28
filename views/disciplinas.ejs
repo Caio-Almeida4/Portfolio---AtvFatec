@@ -20,7 +20,21 @@
         </div>
     </nav>
 
-    <div class="completas">Lista de disciplinas terminadas</div>
-    <div class="disciplinas">Lista disciplinas restantes do curso</div>
+    <main class="page-content">
+        <h1>Disciplinas</h1>
+
+        <% if (disciplinas && disciplinas.length) { %>
+            <ul class="disc-list">
+                <% disciplinas.forEach(function(d) { %>
+                    <li>
+                        <strong><%= d.nome %></strong>
+                        <span class="status">(<%= d.Situacao %>)</span>
+                    </li>
+                <% }) %>
+            </ul>
+        <% } else { %>
+            <p>Nenhuma disciplina encontrada.</p>
+        <% } %>
+    </main>
 </body>
 </html>
