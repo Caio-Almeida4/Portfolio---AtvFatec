@@ -12,7 +12,11 @@ Disciplinas.init({
     type: DataTypes.STRING,
     allowNull: false,
   },
-}, { sequelize, modelName: 'Disciplinas' });
+}, {
+  sequelize,
+  modelName: 'Disciplinas',
+  timestamps: false,
+});
 
 
 module.exports = Disciplinas;
