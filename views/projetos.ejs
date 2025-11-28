@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Projetos</title>
     <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 <body class="with-nav">
@@ -19,6 +19,22 @@
         </div>
     </nav>
 
-    <div class="projetos">Listagem de projetos com titulo, desc e link. Deve ser enviada como uma lista de objetos (criar uma classe? ou um type/enum?)</div>
+    <main class="page-content proj-card">
+        <h1>Projetos</h1>
+
+        <% if (projetos && projetos.length) { %>
+            <div class="proj-list">
+                <% projetos.forEach(function(proj) { %>
+                    <div class="proj-item">
+                        <h2><%= proj.name %></h2>
+                        <p><%= proj.desc %></p>
+                        <a href="<%= proj.link %>" class="proj-link" target="_blank">Ver mais →</a>
+                    </div>
+                <% }) %>
+            </div>
+        <% } else { %>
+            <p>Nenhum projeto encontrado.</p>
+        <% } %>
+    </main>
 </body>
 </html>
